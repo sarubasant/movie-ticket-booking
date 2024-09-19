@@ -23,7 +23,7 @@ const port = process.env.PORT || 8080;
 app.use(express.static(path.join(__dirname, '../../client/build')));
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', '*');
 
@@ -54,6 +54,7 @@ app.use(invitationsRouter);
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname + '../../client/build/index.html'));
+  // res.sendFile(path.join(__dirname + '../../client/build/index.html'));
+  res.send("hi hello")
 });
 app.listen(port, () => console.log(`app is running in PORT: ${port}`));
