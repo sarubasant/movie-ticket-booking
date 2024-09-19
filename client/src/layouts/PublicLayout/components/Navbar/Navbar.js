@@ -38,8 +38,9 @@ class Navbar extends Component {
           })}>
           <Link className={classes.logoLink} to="/">
             <Typography className={classes.logo} variant="h2">
-              Movie+
+              MyMovie
             </Typography>
+            <p className={classes.tagLine}>Online Movie Ticket Booking</p>
           </Link>
           <div className={classes.navLinks}>
             <Link className={classes.navLink} to="/">

@@ -1,3 +1,5 @@
+import color from "@material-ui/core/colors/amber";
+
 export default theme => ({
   navbar: {
     position: 'fixed',
@@ -13,6 +15,14 @@ export default theme => ({
     backfaceVisibility: 'hidden',
     zIndex: 999,
     transition: 'all 300ms ease-in'
+  },
+  tagLine: {
+    fontSize: '0.75rem',
+    color: 'white',
+    padding: '0.25rem 0',
+    // paddingLeft: '0',
+    // borderTop: '1px solid',
+
   },
   navbarColor: {
     background: theme.palette.background.dark,
@@ -32,7 +42,8 @@ export default theme => ({
     maxHeight: '2.4rem',
     width: 'auto',
     fontSize: '2rem',
-    letterSpacing: '1px',
+    letterSpacing: '4px',
+    fontWeight: 'bold',
     color: theme.palette.common.white
   },
   navLinks: {
