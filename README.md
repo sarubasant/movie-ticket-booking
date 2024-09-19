@@ -1,13 +1,11 @@
 <h1 align="center">
-Cinema +
+Movie +
 </h1>
 <p align="center">
 MongoDB, Expressjs, React/Redux, Nodejs
 </p>
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) 
-
-Cinema + is an online Movie Ticket Booking web app with MERN Stack.
+Movie + is an online Movie Ticket Booking web app with MERN Stack.
 
   - Online Booking System
   - Admin Dashboard
@@ -35,7 +33,7 @@ You can also:
   - Export QR Code pass as PDF
 
 ### Tech
-Cinema + uses a number of open source projects to work properly:
+Movie + uses a number of open source projects to work properly:
 * [MongoDB](https://www.mongodb.com/) - A document-oriented, No-SQL database used to store the application data.
 * [ExpressJS](https://expressjs.com/) - fast node.js network app framework.
 * [ReactJS](https://reactjs.org/) - A JavaScript library for building user interfaces.
@@ -44,7 +42,7 @@ Cinema + uses a number of open source projects to work properly:
 
 ### Installation
 
-Cinema + requires [Node.js](https://nodejs.org/)  to run.
+Movie + requires [Node.js](https://nodejs.org/)  to run.
 
 Set environment variables 
 
@@ -85,7 +83,7 @@ $ npm run client
 
 ### Plugins
 
-Cinema + is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
+Movie + is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
 
 ### Server
 
