@@ -8,12 +8,12 @@ export default function Footer() {
     <div className={classes.root}>
       <Divider />
       <Typography className={classes.copyright} variant="body1">
-        &copy; George Simos. 2020
+        &copy; Lumbini City College, 2024
       </Typography>
       <Typography variant="caption">
-        Crafted with love |{' '}
-        <Link href="http://georgesimos.com/" target="_blank" rel="noopener">
-          George Simos
+        Created by |{' '}
+        <Link href="http://github.com/sarubasant" target="_blank" rel="noopener">
+          Basanta Saru & Sagun Khatri
         </Link>
       </Typography>
     </div>

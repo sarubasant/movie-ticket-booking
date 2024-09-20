@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { makeStyles } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 import { Paper } from '../../../../components';
-import { EventSeat, AttachMoney } from '@material-ui/icons';
+import { EventSeat } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -79,9 +79,9 @@ function CinemaCard(props) {
         </Typography>
       </div>
       <div className={classes.stats}>
-        <AttachMoney className={classes.eventIcon} />
+        {/* <AttachMoney className={classes.eventIcon} /> */}
         <Typography className={classes.eventText} variant="body2">
-          {cinema.ticketPrice} <span>&euro;</span> per movie
+          NRs. {cinema.ticketPrice}  per movie
         </Typography>
       </div>
       <div className={classes.stats}>

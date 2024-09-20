@@ -190,7 +190,7 @@ class AddMovie extends Component {
 
             <TextField
               className={classes.textField}
-              label="Duration"
+              label="Duration (in minute)"
               margin="dense"
               type="number"
               value={duration}
