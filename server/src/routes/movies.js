@@ -17,8 +17,7 @@ router.post('/movies', auth.enhance, async (req, res) => {
   }
 });
 
-router.post(
-  '/movies/photo/:id',
+router.post('/movies/photo/:id',
   auth.enhance,
   upload('movies').single('file'),
   async (req, res, next) => {
@@ -33,6 +32,7 @@ router.post(
       }
       const movie = await Movie.findById(movieId);
       if (!movie) return res.sendStatus(404);
+      console.log("file", file)
       movie.image = `${url}/${file.path}`;
       await movie.save();
       res.send({ movie, file });
@@ -47,6 +47,7 @@ router.post(
 router.get('/movies', async (req, res) => {
   try {
     const movies = await Movie.find({});
+    // console.log(movies)
     res.send(movies);
   } catch (e) {
     res.status(400).send(e);

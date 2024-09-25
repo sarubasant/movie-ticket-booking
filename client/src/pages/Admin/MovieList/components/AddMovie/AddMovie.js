@@ -21,6 +21,7 @@ import FileUpload from '../../../../../components/FileUpload/FileUpload';
 class AddMovie extends Component {
   state = {
     title: '',
+    // trailer: '',
     image: null,
     genre: [],
     language: '',
@@ -36,6 +37,7 @@ class AddMovie extends Component {
     if (this.props.edit) {
       const {
         title,
+        // trailer,
         language,
         genre,
         director,
@@ -47,6 +49,7 @@ class AddMovie extends Component {
       } = this.props.edit;
       this.setState({
         title,
+        // trailer,
         language,
         genre: genre.split(','),
         director,
@@ -82,6 +85,7 @@ class AddMovie extends Component {
     const { image, genre, ...rest } = this.state;
     const movie = { ...rest, genre: genre.join(',') };
     this.props.addMovie(image, movie);
+
   };
 
   onUpdateMovie = () => {
@@ -96,6 +100,7 @@ class AddMovie extends Component {
     const { classes, className } = this.props;
     const {
       title,
+      // trailer,
       image,
       genre,
       language,
@@ -255,6 +260,21 @@ class AddMovie extends Component {
               />
             </MuiPickersUtilsProvider>
           </div>
+          {/* <div className={classes.field}>
+            <TextField
+              className={classes.textField}
+              helperText="Please enter the trailer link"
+              label="Trailer"
+              margin="dense"
+
+              value={trailer}
+              variant="outlined"
+              onChange={event =>
+                this.handleFieldChange('trailer', event.target.value)
+              }
+            />
+          </div> */}
+
           <div className={classes.field}>
             <FileUpload
               className={classes.upload}

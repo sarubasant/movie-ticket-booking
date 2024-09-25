@@ -83,7 +83,8 @@ function MovieBanner(props) {
       <div
         className={classes.blurBackground}
         style={{
-          backgroundImage: `url(${movie.image})`
+          // backgroundImage: `url(${movie.image})`
+          backgroundImage: `url("http://localhost:8080/uploads/movies/1726566115683-2400x900_1.png")`
         }}
       />
       <div className={classes.movieActions}>

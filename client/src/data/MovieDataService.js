@@ -14,4 +14,4 @@ export const genreData = [
   'western'
 ];
 
-export const languageData = ['Nepali', 'Hindi', 'English'];
+export const languageData = ['nepali', 'hindi', 'english'];

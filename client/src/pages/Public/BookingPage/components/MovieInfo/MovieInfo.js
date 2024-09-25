@@ -61,7 +61,8 @@ export default function MovieInfo(props) {
         <div
           className={classes.background}
           style={{
-            backgroundImage: `url(${movie.image})`
+            // backgroundImage: `url(${movie.image})`
+            backgroundImage: `url("http://localhost:8080/uploads/movies/khusma.jpg")`
           }}
         />
         <Typography className={classes.title}>{movie.title}</Typography>

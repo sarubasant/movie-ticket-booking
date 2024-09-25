@@ -11,6 +11,9 @@ const movieSchema = new Schema({
   image: {
     type: String,
   },
+  trailer: {
+    type: String
+  },
   language: {
     type: String,
     required: true,

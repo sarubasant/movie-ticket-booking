@@ -34,7 +34,8 @@ const MovieCardSimple = props => {
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image={movie.image}
+            // image={movie.image}
+            image="http://localhost:8080/uploads/movies/cp5.jpeg"
             title={movie.title}
           />
           <CardContent>

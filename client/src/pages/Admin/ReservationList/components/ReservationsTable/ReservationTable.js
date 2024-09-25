@@ -34,8 +34,8 @@ class ReservationsTable extends Component {
     reservations: [],
     movies: [],
     cinemas: [],
-    onSelect: () => {},
-    onShowDetails: () => {}
+    onSelect: () => { },
+    onShowDetails: () => { }
   };
 
   handleChangePage = (event, page) => {
@@ -48,7 +48,7 @@ class ReservationsTable extends Component {
 
   onFindAttr = (id, list, attr) => {
     const item = list.find(item => item._id === id);
-    return item ? item[attr] : `Not ${attr} Found`;
+    return item ? item[attr] : `No ${attr} Found`;
   };
 
   render() {

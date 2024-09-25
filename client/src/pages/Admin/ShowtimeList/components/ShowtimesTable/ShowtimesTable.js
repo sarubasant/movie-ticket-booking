@@ -28,13 +28,17 @@ class ShowtimesTable extends Component {
     classes: PropTypes.object.isRequired,
     onSelect: PropTypes.func,
     onShowDetails: PropTypes.func,
-    showtimes: PropTypes.array.isRequired
+    showtimes: PropTypes.array.isRequired,
+    movies: PropTypes.array.isRequired,
+    cinemas: PropTypes.array.isRequired
   };
 
   static defaultProps = {
     showtimes: [],
-    onSelect: () => {},
-    onShowDetails: () => {}
+    movies: [],
+    cinemas: [],
+    onSelect: () => { },
+    onShowDetails: () => { }
   };
 
   handleChangePage = (event, page) => {
@@ -45,11 +49,18 @@ class ShowtimesTable extends Component {
     this.setState({ rowsPerPage: event.target.value });
   };
 
+  onFindAttr = (id, list, attr) => {
+    const item = list.find(item => item._id === id);
+    return item ? item[attr] : `No ${attr} Found`;
+  };
+
   render() {
     const {
       classes,
       className,
       showtimes,
+      movies,
+      cinemas,
       onSelectShowtime,
       selectedShowtimes,
       selectAllShowtimes
@@ -89,6 +100,7 @@ class ShowtimesTable extends Component {
                 })
                 .slice(0, rowsPerPage)
                 .map(showtime => (
+
                   <TableRow
                     className={classes.tableRow}
                     hover
@@ -112,10 +124,12 @@ class ShowtimesTable extends Component {
                       </div>
                     </TableCell>
                     <TableCell className={classes.tableCell}>
-                      {showtime.movieId}
+                      {/* {showtime.movieId} */}
+                      {this.onFindAttr(showtime.movieId, movies, 'title')}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
-                      {showtime.cinemaId}
+                      {/* {showtime.cinemaId} */}
+                      {this.onFindAttr(showtime.cinemaId, cinemas, 'name')}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
                       {moment(showtime.startDate).format('DD/MM/YYYY')}
