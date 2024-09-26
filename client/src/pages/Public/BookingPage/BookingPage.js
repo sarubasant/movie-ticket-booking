@@ -136,7 +136,7 @@ class BookingPage extends Component {
       const { data } = response;
       setQRCode(data.QRCode);
       getReservations();
-      showInvitationForm();
+      // showInvitationForm();
     }
   }
 
@@ -195,7 +195,7 @@ class BookingPage extends Component {
     const filteredReservations = reservations.filter(
       reservation =>
         new Date(reservation.date).toLocaleDateString() ===
-          new Date(selectedDate).toLocaleDateString() &&
+        new Date(selectedDate).toLocaleDateString() &&
         reservation.startAt === selectedTime
     );
     if (filteredReservations.length && selectedDate && selectedTime) {
@@ -389,7 +389,7 @@ class BookingPage extends Component {
               onChangeDate={this.onChangeDate}
               onChangeTime={this.onChangeTime}
             />
-            {showInvitation && !!selectedSeats.length && (
+            {/* {showInvitation && !!selectedSeats.length && (
               <BookingInvitation
                 selectedSeats={selectedSeats}
                 sendInvitations={this.sendInvitations}
@@ -398,7 +398,7 @@ class BookingPage extends Component {
                 onSetInvitation={setInvitation}
                 onDownloadPDF={this.jsPdfGenerator}
               />
-            )}
+            )} */}
 
             {cinema && selectedCinema && selectedTime && !showInvitation && (
               <>

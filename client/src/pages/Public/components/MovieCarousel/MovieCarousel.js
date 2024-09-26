@@ -32,6 +32,7 @@ function PrevArrow(props) {
 }
 
 function MovieCarousel({ carouselClass, movies = [], title, to = null }) {
+
   const classes = useStyles();
   const settings = {
     centerMode: true,
@@ -69,14 +70,14 @@ function MovieCarousel({ carouselClass, movies = [], title, to = null }) {
         <Typography className={classes.h2} variant="h2" color="inherit">
           {title}
         </Typography>
-        {to==null? null
-           :
+        {to == null ? null
+          :
           <Link to={to} style={{ textDecoration: 'none' }}>
-          <Button className={classes.button} color="primary">
-            Explore All
-          </Button>
-        </Link>
-      }
+            <Button className={classes.button} color="primary">
+              Explore All
+            </Button>
+          </Link>
+        }
       </div>
       <Slider {...settings} className={classes.slider}>
         {movies.map(movie => (

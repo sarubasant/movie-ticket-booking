@@ -57,6 +57,7 @@ export const addReservation = reservation => async dispatch => {
     if (response.ok) {
       const { reservation, QRCode } = await response.json();
       dispatch(setAlert('Reservation Created', 'success', 5000));
+
       return {
         status: 'success',
         message: 'Reservation Created',

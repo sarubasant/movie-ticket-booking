@@ -42,7 +42,7 @@ function MyDashboard(props) {
     reservation => reservation.username === user.username
   );
 
-  console.log(myReservations);
+  // console.log(myReservations);
 
   return (
     <Container>

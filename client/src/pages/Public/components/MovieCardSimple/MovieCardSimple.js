@@ -35,7 +35,7 @@ const MovieCardSimple = props => {
           <CardMedia
             className={classes.media}
             // image={movie.image}
-            image="http://localhost:8080/uploads/movies/cp5.jpeg"
+            image={movie.image.replace(/\\/g, '/')} // Replacing backslashes with forward slashes
             title={movie.title}
           />
           <CardContent>

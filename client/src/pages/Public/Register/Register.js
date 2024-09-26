@@ -115,6 +115,7 @@ class Register extends Component {
                       className={classes.textField}
                       label="Mobile Phone"
                       name="phone"
+                      type='number'
                       value={values.phone}
                       variant="outlined"
                       onChange={event =>

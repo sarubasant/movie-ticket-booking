@@ -22,7 +22,7 @@ router.post('/cinemas/photo/:id', upload('cinemas').single('file'), async (req, 
   const { file } = req;
   const movieId = req.params.id;
   try {
-    console.log(file)
+
     if (!file) {
       const error = new Error('Please upload a file');
       error.httpStatusCode = 400;
@@ -34,7 +34,7 @@ router.post('/cinemas/photo/:id', upload('cinemas').single('file'), async (req, 
     await cinema.save();
     res.send({ cinema, file });
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     res.sendStatus(400).send(e);
   }
 });

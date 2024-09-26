@@ -8,7 +8,7 @@ const router = new express.Router();
 // Create a user
 router.post('/users', async (req, res) => {
   try {
-    const {role} = req.body;
+    const { role } = req.body;
     if (role) throw new Error('you cannot set role property.');
     const user = new User(req.body);
     await user.save();
@@ -35,7 +35,7 @@ router.post('/users/photo/:id', upload('users').single('file'), async (req, res,
     await user.save();
     res.send({ user, file });
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     res.sendStatus(400).send(e);
   }
 });
@@ -168,7 +168,7 @@ router.get('/users/:id', auth.enhance, async (req, res) => {
 
 // Edit/Update user
 router.patch('/users/me', auth.simple, async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const updates = Object.keys(req.body);
   const allowedUpdates = ['name', 'phone', 'username', 'email', 'password'];
   const isValidOperation = updates.every((update) => allowedUpdates.includes(update));

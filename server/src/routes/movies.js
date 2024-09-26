@@ -32,12 +32,12 @@ router.post('/movies/photo/:id',
       }
       const movie = await Movie.findById(movieId);
       if (!movie) return res.sendStatus(404);
-      console.log("file", file)
+
       movie.image = `${url}/${file.path}`;
       await movie.save();
       res.send({ movie, file });
     } catch (e) {
-      console.log(e);
+      // console.log(e);
       res.sendStatus(400).send(e);
     }
   }

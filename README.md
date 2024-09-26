@@ -1,5 +1,5 @@
 <h1 align="center">
-Movie +
+Online Movie Ticket Booking System
 </h1>
 <p align="center">
 MongoDB, Expressjs, React/Redux, Nodejs
@@ -118,3 +118,5 @@ Movie + is currently extended with the following plugins. Instructions on how to
 ### Todos
 
  - Add Light Mode / More themes
+
+Note: Use node js version 16

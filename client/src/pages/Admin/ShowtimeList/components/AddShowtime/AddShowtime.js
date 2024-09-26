@@ -128,7 +128,7 @@ class AddShowtime extends Component {
               onChange={event =>
                 this.handleFieldChange('startAt', event.target.value)
               }>
-              {['18:00', '19:00', '20:00', '21:00', ' 22:00', '23:00'].map(
+              {['8:00', '12:00', '14:00', '16:00', ' 18:00'].map(
                 time => (
                   <MenuItem key={`time-${time}`} value={time}>
                     {time}

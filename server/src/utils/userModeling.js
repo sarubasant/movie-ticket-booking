@@ -22,7 +22,7 @@ const cinemaUserModeling = async (cinemas, username) => {
     sortedCinemaResult.sort((a, b) => {
       return b[1] - a[1];
     });
-    console.log(sortedCinemaResult);
+    // console.log(sortedCinemaResult);
 
     const newCinemas = JSON.parse(JSON.stringify(cinemas));
     let i = 0;
@@ -38,7 +38,7 @@ const cinemaUserModeling = async (cinemas, username) => {
       i++;
     }
 
-    console.log(newCinemas);
+    // console.log(newCinemas);
 
     return newCinemas;
   } else {
@@ -120,7 +120,7 @@ const findRates = (moviesNotWatched, userPreference) => {
     }
     if (rate !== 0) result.push([movie, rate]);
   }
-  console.log(result);
+  // console.log(result);
   return result;
 };
 

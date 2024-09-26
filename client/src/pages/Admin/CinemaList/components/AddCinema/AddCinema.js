@@ -60,8 +60,8 @@ class AddCinema extends Component {
     type === 'create'
       ? (notification = await createCinemas(image, cinema))
       : type === 'update'
-      ? (notification = await updateCinemas(image, cinema, _id))
-      : (notification = await removeCinemas(_id));
+        ? (notification = await updateCinemas(image, cinema, _id))
+        : (notification = await removeCinemas(_id));
     this.setState({ notification });
     if (notification && notification.status === 'success') getCinemas();
   };
@@ -200,6 +200,7 @@ class AddCinema extends Component {
               className={classes.textField}
               label="Seats Available"
               margin="dense"
+              type='number'
               required
               value={seatsAvailable}
               variant="outlined"

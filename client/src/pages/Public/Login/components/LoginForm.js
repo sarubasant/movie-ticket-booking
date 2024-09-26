@@ -94,7 +94,7 @@ function LoginForm(props) {
         Sign in
       </Typography>
 
-      <div className={classes.socialLogin}>
+      {/* <div className={classes.socialLogin}>
         <GoogleLogin
           clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
           onSuccess={googleLogin}
@@ -125,7 +125,7 @@ function LoginForm(props) {
           fields="name,email,picture"
           callback={facebookLogin}
         />
-      </div>
+      </div> */}
 
       <div className={classes.fields}>
         <TextField

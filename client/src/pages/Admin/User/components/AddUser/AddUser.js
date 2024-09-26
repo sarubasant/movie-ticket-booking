@@ -135,6 +135,7 @@ class AddUser extends Component {
               fullWidth
               className={classes.textField}
               label="Phone"
+              type='number'
               margin="dense"
               required
               value={phone}
