@@ -14,6 +14,7 @@ const cinemaRouter = require('./routes/cinema');
 const showtimeRouter = require('./routes/showtime');
 const reservationRouter = require('./routes/reservation');
 const invitationsRouter = require('./routes/invitations');
+const paymentRouter = require('./routes/payment');
 
 const app = express();
 app.disable('x-powered-by');
@@ -48,6 +49,7 @@ app.use(cinemaRouter);
 app.use(showtimeRouter);
 app.use(reservationRouter);
 app.use(invitationsRouter);
+app.use(paymentRouter);
 
 // app.get('/api/test', (req, res) => res.send('Hello World'))
 

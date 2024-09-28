@@ -45,7 +45,25 @@ const reservationSchema = new Schema({
     type: Boolean,
     default: false,
   },
-});
+  // new code
+  paymentStatus: {
+    type: String,
+    enum: ["paid", "pending"],
+    default: "pending",
+  },
+  pidx: {
+    type: String,
+    default: "",
+  },
+  transactionId: {
+    type: String,
+    default: "",
+  }
+  //new code end
+},
+  {
+    timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
+  });
 
 const Reservation = mongoose.model('Reservation', reservationSchema);
 
