@@ -35,6 +35,10 @@ import BookingInvitation from './components/BookingInvitation/BookingInvitation'
 import jsPDF from 'jspdf';
 
 class BookingPage extends Component {
+  handleRedirect = (url) => {
+    window.location.href = url;  // Redirect to external URL
+  };
+
   didSetSuggestion = false;
 
   componentDidMount() {
@@ -134,6 +138,31 @@ class BookingPage extends Component {
     });
     if (response.status === 'success') {
       const { data } = response;
+
+      const payload = {
+        "itemId": data.reservation._id,
+        "totalPrice": data.reservation.total,
+        "website_url": "http://localhost:8080"
+      }
+      // console.log(typeof (payload.totalPrice))
+      const url = 'http://localhost:8080/initialize-khalti';
+      const payresponse = await fetch(url, {
+        method: 'POST',
+        headers: {
+          //   Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload) // Converts to a JSON string
+      });
+
+      if (payresponse.ok) {
+        const jsonResponse = await payresponse.json();
+        // console.log(jsonResponse);
+        this.handleRedirect(jsonResponse?.payment?.payment_url);
+      } else {
+        console.error('Payment initialization failed:', payresponse.status);
+      }
+
       setQRCode(data.QRCode);
       getReservations();
       // showInvitationForm();

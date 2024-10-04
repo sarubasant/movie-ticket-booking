@@ -17,7 +17,7 @@ export default theme => ({
     transition: 'all 300ms ease-in'
   },
   tagLine: {
-    fontSize: '0.75rem',
+    fontSize: '0.82rem',
     color: 'white',
     padding: '0.25rem 0',
     // paddingLeft: '0',
@@ -42,7 +42,7 @@ export default theme => ({
     maxHeight: '2.4rem',
     width: 'auto',
     fontSize: '2rem',
-    letterSpacing: '4px',
+    letterSpacing: '1px',
     fontWeight: 'bold',
     color: theme.palette.common.white
   },

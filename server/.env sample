@@ -1,0 +1,8 @@
+GMAIL_USER = ""
+GMAIL_PASSWORD = ""
+MONGODB_URI = "mongodb://localhost:27017/movie"
+PORT = 8080
+
+BACKEND_URI = "http://localhost:8080"
+KHALTI_SECRET_KEY = ""
+KHALTI_GATEWAY_URL = "https://a.khalti.com"

@@ -4,17 +4,21 @@ const auth = require('../middlewares/auth');
 const Payment = require('../models/paymentModel');
 const Reservation = require('../models/reservation');
 const Movie = require('../models/movie');
-
 const userModeling = require('../utils/userModeling');
 const generateQR = require('../utils/generateQRCode');
 
 const router = new express.Router();
 
+const mongoose = require('mongoose');
+mongoose.set('useFindAndModify', false);  // Globally disable useFindAndModify
+
 // route to initilize khalti payment gateway
 router.post("/initialize-khalti", async (req, res) => {
+
   try {
     //try catch for error handling
     const { itemId, totalPrice, website_url } = req.body;
+
     const itemData = await Reservation.findOne({
       _id: itemId,
       total: Number(totalPrice),
@@ -27,21 +31,17 @@ router.post("/initialize-khalti", async (req, res) => {
         message: "item not found",
       });
     }
-    // creating a purchase document to store purchase info
-    // const purchasedItemData = await PurchasedItem.create({
-    //   item: itemId,
-    //   paymentMethod: "khalti",
-    //   totalPrice: totalPrice * 100,
-    // });
+
     const movieName = await Movie.findById(itemData.movieId)
-    console.log(movieName.title)
+    // console.log("movie title" + movieName.title)
 
     const paymentInitate = await initializeKhaltiPayment({
       amount: totalPrice * 100, // amount should be in paisa (Rs * 100)
-      // purchase_order_id: purchasedItemData._id, // purchase_order_id because we need to verify it later
+
       purchase_order_id: itemId, // reservationId in our case
       purchase_order_name: movieName.title,
       return_url: `${process.env.BACKEND_URI}/complete-khalti-payment`, // it can be even managed from frontedn
+      // return_url: 'http://localhost:3000/#/dashboard',
       website_url,
     });
 
@@ -81,6 +81,7 @@ router.get("/complete-khalti-payment", async (req, res) => {
     transaction_id,
   } = req.query;
 
+  // console.log("pidx ".pidx)
   // console.log(purchase_order_id, amount)
 
   try {
@@ -144,11 +145,17 @@ router.get("/complete-khalti-payment", async (req, res) => {
     });
 
     // Send success response
-    res.json({
-      success: true,
-      message: "Payment Successful",
-      paymentData,
-    });
+    // res.json({
+    //   success: true,
+    //   message: "Payment Successful",
+    //   paymentData,
+    // });
+
+    // Redirect to the frontend with a success message or status
+    const redirectUrl = `http://localhost:3000/#/mydashboard?message=PaymentSuccessful`;
+    // const redirectUrl = `http://localhost:3000/?message=PaymentSuccessful`;
+    return res.redirect(redirectUrl);
+
   } catch (error) {
     console.error(error);
     res.status(500).json({
@@ -157,6 +164,7 @@ router.get("/complete-khalti-payment", async (req, res) => {
       error,
     });
   }
+
 });
 
 module.exports = router;

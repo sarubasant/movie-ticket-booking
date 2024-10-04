@@ -27,9 +27,9 @@ export default theme => ({
     maxWidth: '100%',
     margin: 'auto',
     fontFamily: 'Montserrat,sans-serif',
-    fontSize: '22px',
+    fontSize: '20px',
     fontWeight: 700,
-    letterSpacing: 3,
+    letterSpacing: 2,
     color: theme.palette.common.white
   },
   title: {

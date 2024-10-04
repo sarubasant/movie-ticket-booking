@@ -38,9 +38,9 @@ class Navbar extends Component {
           })}>
           <Link className={classes.logoLink} to="/">
             <Typography className={classes.logo} variant="h2">
-              MyMovie
+              LCC Multiplex
             </Typography>
-            <p className={classes.tagLine}>Online Movie Ticket Booking</p>
+            <p className={classes.tagLine}>Online Movie Ticket Booking System</p>
           </Link>
           <div className={classes.navLinks}>
             <Link className={classes.navLink} to="/">

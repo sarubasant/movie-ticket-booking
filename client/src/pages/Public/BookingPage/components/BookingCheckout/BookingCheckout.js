@@ -76,7 +76,7 @@ export default function BookingCheckout(props) {
             fullWidth
             disabled={seatsAvailable <= 0}
             onClick={() => onBookSeats()}>
-            Checkout
+            Pay with Khalti
           </Button>
         </Grid>
       </Grid>
